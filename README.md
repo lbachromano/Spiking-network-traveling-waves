@@ -4,24 +4,11 @@ This repository contains the analysis and simulation code accompanying the paper
 
 > **A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex**
 
-For questions: lbachromano @ gmail.com
-
-## Data availability
-
-All experimental data are available on Zenodo: [10.5281/zenodo.19420479]
-                                                                         
 
 ## Dependencies
 
 - **Python 3** with [Brian2] (network simulations)
 - **MATLAB** (data analysis and plots)
-
-
-## Citation
-
-If you use this code, please cite the paper: Bachschmid-Romano L, Hatsopoulos N, Brunel N. A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex. bioRxiv. 2026:2026-03. (full citation to be added upon publication).
-                          
-If you use this data, please cite the paper:  Rubino D, Robbins KA, Hatsopoulos NG. Propagating waves mediate information transfer in the motor cortex. Nature neuroscience. 2006 Dec;9(12):1549-57.
                                                         
 
 ### Data files
@@ -140,3 +127,14 @@ Plots Re(λ(kx, ky)) as a 2D heatmap in the space of rotated wave numbers u (dir
 |--------|-------------|--------|
 | `Isotropic_data/W_print_peak_isotropy.m` | Isotropic case. | Fig 5b |
 | `Anisotropic_data/W_print_peak_anisotropy.m` | Anisotropic case. | Fig 5c |
+
+## Data availability
+
+All experimental data are available on Zenodo: [10.5281/zenodo.19420479]
+                                                                         
+
+## Citation
+
+If you use this code, please cite the paper: Bachschmid-Romano L, Hatsopoulos N, Brunel N. A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex. bioRxiv. 2026:2026-03. (full citation to be added upon publication).
+                          
+If you use this data, please cite the paper:  Rubino D, Robbins KA, Hatsopoulos NG. Propagating waves mediate information transfer in the motor cortex. Nature neuroscience. 2006 Dec;9(12):1549-57.
