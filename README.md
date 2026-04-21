@@ -32,7 +32,7 @@ This repository contains the analysis and simulation code accompanying the paper
     ├── figure4/             # Plots results from linear stability analysis compared to simulations  (Fig 4)
     └── figure5/             # Plots results from linear stability analysis (Fig 5)
 
-├── functions/              # shared helper functions used across the data analysis, simulation, and theory scripts.
+├── functions/               # shared helper functions used across the data analysis, simulation, and theory scripts.
                                                                          
 ```
 
