@@ -21,7 +21,7 @@ freqrange = [6 250]; %gross filtering just not to see the step function
 fs=1000;
 order=2; 
 
-for trial_number=1:10 %one selected example
+for trial_number=1:10  
 
   %used as example here, replace with the desired data list
 
