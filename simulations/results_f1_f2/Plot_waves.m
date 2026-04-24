@@ -39,7 +39,7 @@
 % MAIN PROCESSING STEPS:
 %   1. Load and z-score LFP data; map channels onto 2-D array geometry.
 %   2. Identify the dominant LFP frequency using Welch PSD of the
-%      spatial-mean signal; bandpass-filter around this frequency (±3 Hz).
+%      spatial-mean signal; bandpass-filter around this frequency (Â±3 Hz).
 %   3. Compute instantaneous phase via Hilbert transform; spatially unwrap.
 %   4. At each time frame, compute:
 %        - Rayleigh Z statistic from unit-normalised phase gradient vectors.
@@ -91,8 +91,9 @@ lfp_temp_l = chanlfp.prep_LFP';
 number_trials=1;
 L_array_x=sqrt(size(lfp_temp_l,2));
 L_array_y=sqrt(size(lfp_temp_l,2));
-CR_x=load('Rec_x.mat')
-CR_y=load('Rec_y.mat')
+CR_x = load(fullfile(folder_name,'Rec_x.mat'));   
+CR_y = load(fullfile(folder_name,'Rec_y.mat'));  
+
 Rec_x=CR_x.data.*1000;
 Rec_y=CR_y.data.*1000;
 
@@ -528,7 +529,7 @@ for kk = 1:size(selected_waves,1)
     end
 
     function Xs = spatial_block_shuffle(X, bsz)
-    % Shuffle non-overlapping bsz×bsz tiles across the grid.
+    % Shuffle non-overlapping bszÃ—bsz tiles across the grid.
     % Preserves local within-block gradients; breaks global planes.
     [nr, nc] = size(X);
     assert(mod(nr,bsz)==0 && mod(nc,bsz)==0, 'Grid must be divisible by block size');
