@@ -4,6 +4,8 @@
 clear
 
 addpath(fullfile(pwd, '..', '..', 'functions'));
+
+
 folder_name='examples_paper';   
 trial_number=8; %used as example %1 11
 
@@ -14,8 +16,8 @@ CR_y = load(fullfile(folder_name,'Rec_y.mat')); Rec_y = CR_y.data(:);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-threshold     = 0.7;      % envelope crossing threshold
-win_ms   = -400 : 400; %window around tref_ms where to look for the beta attenuation time
+threshold     = 0.8;      % envelope crossing threshold
+win_ms   = -400 : 600; %window around tref_ms where to look for the beta attenuation time
 order= 4;
 fs = 1000;     % sampling rate (Hz)
 skip_initial_window=50; %skip the first 100 ms containing artifacts
