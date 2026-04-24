@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 external_input=0.9 #in the paper, value of nu_{ext}/\nu_{theta}
 homogeneous=0 # 1 to simulate a network with spatially homogeneous connectivity, 1 to simulate a spatially extended network.
