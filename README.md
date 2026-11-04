@@ -2,7 +2,7 @@
 
 Code accompanying *A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex*.
 
-The `theory/` directory contains the mean-field and linear stability calculations. The `simulations/` directory contains the Brian2 spiking network simulations and scripts for analyzing their output. The tables below identify the files used for each figure.
+The `theory/` directory contains the mean-field and linear stability calculations. The `simulations/` directory contains the Brian2 spiking network simulations and scripts for analyzing their output. 
 
 ## Getting started
 
