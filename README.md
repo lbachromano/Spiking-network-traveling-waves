@@ -1,140 +1,23 @@
-# Supplementary Code — Beta Traveling Waves in Motor Cortex
+# Beta Traveling Waves in Motor Cortex
 
-This repository contains the analysis and simulation code accompanying the paper:
+Code accompanying *A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex*.
 
-> **A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex**
+The `theory/` directory contains the mean-field and linear stability calculations. The `simulations/` directory contains the Brian2 spiking network simulations and scripts for analyzing their output. The tables below identify the files used for each figure.
 
-The repository includes Python notebooks used for experimental traveling-wave analyses during revision of the paper, the original MATLAB analysis scripts, Brian2 network simulations, and MATLAB code for mean-field and linear stability analyses.
+## Getting started
 
-## Dependencies
-
-- **Experimental data analysis notebooks:** Python 3, NumPy, SciPy, Matplotlib, and JupyterLab.
-- **Network simulations:** Python 3 with Brian2.
-- **MATLAB analyses and plotting:** MATLAB, with additional toolboxes as required by individual scripts.
-
-Install the Python notebook dependencies with:
+Install the Python packages used for simulation and analysis, then start JupyterLab from the repository root.
 
 ```bash
-pip install numpy scipy matplotlib jupyterlab
+python -m pip install numpy scipy pandas matplotlib brian2 jupyterlab
+python -m jupyterlab
 ```
 
-Brian2 is required for the network simulations but not for the experimental data analysis notebooks.
+Open each notebook in its original folder so its relative paths resolve. To generate theoretical results, follow the README in the corresponding figure folder. To plot results, use the notebooks listed below.
 
-## Experimental data
+## Figures 1–2
 
-Download the experimental data separately from [Zenodo](https://doi.org/10.5281/zenodo.19420479).
-
-| File | Description |
-|------|-------------|
-| `Beh_matrix.mat` | Behavioral timing data from a center-out reaching task. Rows correspond to trials. Columns from the second onward contain: start of trial, target onset, go cue, movement onset, movement end, reward, and target identity. The first two columns are identical. |
-| `rs1050225_MI_clean_LFP.mat` | Low-pass filtered LFP recordings from 96 channels of a Utah array. The field `MIchan2rc` contains channel coordinates. |
-
-For the Python notebooks, place both files in `data/Macaque_data/`. This folder is created locally by the user; the input files are not included in the repository.
-
-## Repository structure
-
-| Folder | Contents |
-|--------|----------|
-| `data/` | Python notebooks used during revision and original MATLAB experimental data analyses |
-| `simulations/` | Brian2 network simulation scripts |
-| `simulations/results_f1_f2/` | Analysis of spatially extended network simulations with ramping external input (Figs. 1–2) |
-| `simulations/results_f3/` | Analysis of homogeneous network simulations with constant input (Fig. 3) |
-| `simulations/results_f4_f5/` | Analysis of spatially extended network simulations with constant input (Figs. 4–5) |
-| `theory/figure3/` | Mean-field and stability results compared with simulations (Fig. 3) |
-| `theory/figure4/` | Linear stability results compared with simulations (Fig. 4) |
-| `theory/figure5/` | Linear stability results for isotropic and anisotropic connectivity (Fig. 5) |
-| `functions/` | Shared MATLAB helper functions |
-
-## 1. `data/` — Experimental data analysis
-
-### Python notebooks used during revision
-
-The following notebooks analyse macaque LFP recordings, detect traveling-wave episodes, and estimate propagation direction, speed, and wavelength. They implement two different measures of spatial phase-gradient coherence.
-
-| Notebook | Detection method |
-|----------|------------------|
-| `Macaque_wave_detection_fixed_r.ipynb` | Uses the resultant length of normalized spatial phase gradients, giving each valid grid location equal weight. The default criterion is `r > 0.4` for at least 10 ms. |
-| `Macaque_wave_detection_as_Rubino.ipynb` | Uses phase-gradient directionality (PGD): the magnitude of the spatially averaged gradient divided by the spatial average of gradient magnitudes. The default criterion is `PGD > 0.5` for at least 10 ms. |
-
-Detailed descriptions of preprocessing, detection, and wave-property estimation are included in each notebook.
-
-Both notebooks export MATLAB-compatible `.mat` files containing event-level measurements, trial-level diagnostics, and analysis settings. They also generate summary plots.
-
-### Running the Python notebooks
-
-1. Download this repository and the experimental data from [Zenodo](https://doi.org/10.5281/zenodo.19420479).
-2. Create a folder named `Macaque_data` inside `data/`, alongside the notebooks.
-3. Place `Beh_matrix.mat` and `rs1050225_MI_clean_LFP.mat` inside `data/Macaque_data/`.
-4. Install the Python notebook dependencies listed above.
-5. From the repository root, launch JupyterLab:
-
-   ```bash
-   cd data
-   jupyter lab
-   ```
-
-6. Open either notebook, review its configuration cell, and run the cells in order.
-
-Input paths, trial counts, analysis windows, frequency-band settings, and detection thresholds can be adjusted in the configuration cell. If the input files are stored elsewhere, update `DATA_DIR`.
-
-With the working directory specified above, exported results are saved in `data/results/`, which is created automatically.
-
-### Original MATLAB experimental analyses
-
-The original MATLAB scripts are retained alongside the Python notebooks for reference and access to the original analysis workflows.
-
-#### `Wave_detection_Macaque_2025_RUN.m`
-
-Detects traveling waves in macaque LFP recordings and computes speed, wavelength, and direction. Plots histograms of wave properties (Figs. 1c, 1d), examples of detected waves (Fig. 1b), and the distribution of wave directions (Fig. 5d).
-
-#### `Macaque_lfp_spectral_envelopes_move_aligned.m`
-
-Computes trial-averaged beta-band power envelopes from multichannel LFP, time-locked to movement onset. Estimates the dominant beta frequency from the average power spectrum, bandpass filters around the peak (±3 Hz), extracts the Hilbert envelope, normalizes per channel, and averages across trials (Fig. 2a).
-
-#### `Autoencoder_Analysis_mov.m`
-
-Computes beta-band suppression onset timing across the Utah array for an example trial and visualizes its spatial distribution (Figs. 2c–d).
-
-#### `Plot_LFP_and_ACF.m`
-
-Visualizes LFP amplitude during movement preparation and execution for a selected trial. Plots z-scored LFP traces and autocorrelation functions separately for pre- and post-movement periods (Fig. 2g).
-
-## 2. `simulations/` — Network simulations (Python / Brian2)
-
-The two simulation scripts generate network activity using Brian2. Run the corresponding shell scripts from the `simulations/` directory.
-
-### `Simulations_sigmoidal_external_rate.py`
-
-Simulates a spatially extended network with ramping external input. The recording-site spacing is `grid_dist_r = 400 µm`. Results are written to `results_f1_f2/` for the analyses associated with Figs. 1–2.
-
-To run:
-
-```bash
-./run_sigmoidal_external_rate.sh
-```
-
-The shell script allows you to specify the number of simulations.
-
-### `Simulations_const_ext_rate.py`
-
-Simulates a network with constant external input. Two modes are available:
-
-- **Homogeneous connectivity:** results are written to `results_f3/` for Fig. 3.
-- **Spatially extended network:** recording-site spacing is `grid_dist_r = 141 µm`; results are written to `results_f4_f5/` for Figs. 4–5.
-
-To run:
-
-```bash
-./run_const_external_rate.sh
-```
-
-In the shell script, select the connectivity mode, external input strength, simulation duration, and EE connectivity anisotropy (`anisotropy_EE`).
-
-For reliable wave-direction histograms, we recommend running at least 50 simulations.
-
-## 3. Results folders — MATLAB post-processing scripts
-
-The following folders are located inside `simulations/`.
+The MATLAB post-processing scripts are in [simulations/results_f1_f2/](simulations/results_f1_f2/).
 
 ### `results_f1_f2/` — Ramping external input
 
@@ -147,57 +30,37 @@ The following folders are located inside `simulations/`.
 | `Beta_power_across_trials.m` | Computes beta-band power envelopes across trials, averaging normalized envelopes across channels and trials. | Fig. 2b |
 | `Plot_external_rate.m` | Plots the rate of the external input population. | Fig. 2b |
 
-### `results_f3/` — Homogeneous network
+## Figure 3
 
-| Script | Description | Figure |
-|--------|-------------|--------|
-| `Read_all.m` | Loads simulation output for a single trial. Plots z-scored LFP traces, autocorrelation functions with estimated oscillation frequency, and a raster for 800 excitatory and 200 inhibitory neurons. | Fig. 3c |
+| Panel or analysis | Files |
+| --- | --- |
+| 3a · Phase diagram | Follow the [stability analysis instructions](theory/Fig3/README.md), then open [Phase_diagram.ipynb](theory/Fig3/Phase_diagram.ipynb). |
+| 3b · Dominant frequency | In [Fig3b](simulations/results_f3/Fig3b/), generate simulation data with `Simulate_dynamics.py` and plot them with `Plot_dominant_frequency.ipynb`. |
+| 3c · Example simulation | In [Examples_3c_g3.159_nu_1.4](simulations/results_f3/Examples_3c_g3.159_nu_1.4/), use `Simulate_dynamics.py` to generate the example and `Fig_3c.ipynb` to plot it. |
+| Finite-size analysis | Under [Results_g3.16](simulations/results_f3/Finite_size/Results_g3.16/), each input condition has a `FiniteSize_analysis_peak_centered.ipynb` notebook. Use `Plot_finite_size_last.ipynb` in their parent folder for the combined plot. |
 
-### `results_f4_f5/` — Spatially extended network, constant input
+## Figure 4
 
-| Script | Description | Figure |
-|--------|-------------|--------|
-| `Snapshots.m` | Shows spike activity on the two-dimensional array. | Figs. 4d–e |
-| `Plot_waves.m` | Detects and characterizes planar traveling waves in simulated LFP. Plots wave examples and wave-direction distributions. | Figs. 4d–e, 5e–f |
+See the [Figure 4 theory instructions](theory/Fig4/README.md) for the stability calculations.
 
-## 4. `theory/` — Mean-field and stability analysis (MATLAB)
+| Panel | Files |
+| --- | --- |
+| 4a | [Fig4_a_b.ipynb](theory/Fig4/Fig4_a_b.ipynb) plots panel 4a and prepares the mean-field prediction used in 4b. |
+| 4b | Generate the isotropic simulation data with [Simulate_dynamics.py](simulations/results_f4/Isotropic_g3.3/Simulate_dynamics.py). Open [Fig4b_fixed_r.ipynb](simulations/results_f4/Fig4b_fixed_r.ipynb) to plot the simulation results together with the mean-field prediction. |
+| 4c | [Fig4_c_plot.ipynb](theory/Fig4/Fig4_c_plot.ipynb) plots the theoretical results. |
+| 4d–e | The simulation is in [Print_waves_spikes](simulations/results_f4/Print_waves_spikes/). The plotting notebook is `LFP_spike_snapshots.ipynb`. |
 
-### `figure3/`
+## Figure 5 and supplementary figures
 
-| Script | Description | Figure |
-|--------|-------------|--------|
-| `Plot_phase_diagram.m` | Plots the phase diagram. | Fig. 3a |
-| `Read_rates.m` | Computes mean-field firing rates at `g = 3.625` for varying external input strengths and compares them with simulations. | Fig. 3b, upper |
-| `Plot_lambda_omega.m` | Plots the imaginary part of the eigenvalue at `g = 3.625` for varying external input strengths and compares it with oscillation frequencies from simulations. | Fig. 3b, lower |
+| Panel | Files |
+| --- | --- |
+| 5b–c | Follow the [Figure 5 theory instructions](theory/Fig5/README.md) and plot the dominant eigenvalue surfaces with [Dominant_eigenvalue_surfaces.ipynb](theory/Fig5/Dominant_eigenvalue_surfaces.ipynb). |
+| 5d | The parameter sweeps are in `theory/Fig5/sweep_g.py` and `theory/Fig5/sweep_nu.py`. Use [plot_5d.ipynb](theory/Fig5/plot_5d.ipynb) for the panel. |
+| 5f | [Simulate_dynamics_isotropic.py](simulations/results_f5/Simulate_dynamics_isotropic.py) generates the isotropic network simulations. |
+| 5g–h and S9 | [Simulate_dynamics.py](simulations/results_f5/Simulate_dynamics.py) generates the simulations for 5g–h. [Wave_propagation_direction.ipynb](simulations/results_f5/Wave_propagation_direction.ipynb) analyzes propagation direction for 5g–h and S9. |
+| S3 | [Supplementary_beta_attenuation_planarity.ipynb](simulations/Supplementary_S3/Supplementary_beta_attenuation_planarity.ipynb) computes beta attenuation latency maps and assesses their planarity. |
 
-### `figure4/`
+## Simulations with time-varying input
 
-| Script | Description | Figure |
-|--------|-------------|--------|
-| `W_print_lambdas.m` | Plots smoothed eigenvalue curves as a function of external input strength. | Fig. 4a |
-| `Plot_omega_and_lambda.m` | Plots spatial frequency (`k`) and oscillation frequency (`ω`) as a function of external input strength, comparing simulations with mean-field predictions. | Fig. 4b |
-| `W_print_lambdas_vs_k.m` | Plots the maximal real part of the eigenvalue spectrum as a function of spatial wavenumber for different propagation velocities, together with selected instability peaks. | Fig. 4c |
-
-### `figure5/`
-
-Plots `Re(λ(kx, ky))` as a two-dimensional heatmap in rotated wavenumber coordinates: `u` follows the direction of maximal connectivity spread, and `v` follows the direction of minimal spread.
-
-| Script | Description | Figure |
-|--------|-------------|--------|
-| `Isotropic_data/W_print_peak_isotropy.m` | Isotropic connectivity. | Fig. 5b |
-| `Anisotropic_data/W_print_peak_anisotropy.m` | Anisotropic connectivity. | Fig. 5c |
-
-## Data availability
-
-All experimental data are available on [Zenodo](https://doi.org/10.5281/zenodo.19420479). Download the input MAT files separately and follow the setup instructions above.
-
-## Citation
-
-If you use this code, please cite:
-
-Bachschmid-Romano L, Hatsopoulos N, Brunel N. *A Spatially Structured Spiking Network Model of Beta Traveling Waves and Their Attenuation in Motor Cortex.* bioRxiv. 2026. Full citation to be added upon publication.
-
-If you use the experimental data, please also cite:
-
-Rubino D, Robbins KA, Hatsopoulos NG. Propagating waves mediate information transfer in the motor cortex. *Nature Neuroscience.* 2006;9(12):1549–1557.
+From `simulations/`, use `bash run_sigmoidal_external_rate.sh` to launch `Simulations_sigmoidal_external_rate.py`. The shell script sets the run indices, seed, external input and inhibitory coupling.
 
