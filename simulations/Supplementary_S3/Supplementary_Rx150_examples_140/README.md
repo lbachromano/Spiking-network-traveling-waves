@@ -1,15 +1,14 @@
-140 trials need to be generated usign the script run_sigmoidal_external_rate.sh
+To generate 140 trials, run `run_sigmoidal_external_rate.sh`:
 
-For example, run:
-
+```bash
 #!/usr/bin/env bash
 
- 
 n=140
 master_seed=235
 
 nu_ext=2000
 g=3.625
+
 for ((i=1; i<=n; i++)); do
     # Derive a unique, reproducible seed for each run
     rs=$(( master_seed + i*10 ))
@@ -18,3 +17,4 @@ for ((i=1; i<=n; i++)); do
     echo "Waiting 2 minutes before next run..."
     sleep 120
 done
+```
