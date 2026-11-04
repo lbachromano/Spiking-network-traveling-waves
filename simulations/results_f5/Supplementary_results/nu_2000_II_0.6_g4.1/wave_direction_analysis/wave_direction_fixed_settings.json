@@ -1,0 +1,182 @@
+{
+  "settings": {
+    "EXPECTED_CHUNKS": 10,
+    "CHUNK_DURATION_MS": 1000.0,
+    "DATA_DIR": "Supplementary/nu_2000_II_0.6_g4.1",
+    "SIMULATION_IDS": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "MANUAL_BAND_HZ": null,
+    "THRESHOLD_METHOD": "fixed",
+    "FIXED_R_THRESHOLD": 0.5,
+    "FIXED_RESIDUAL_THRESHOLD_RAD": 0.2,
+    "RAYLEIGH_PERCENTILE": 99.99,
+    "RESIDUAL_PERCENTILE": 20.0,
+    "OUTPUT_DIR": "Supplementary/nu_2000_II_0.6_g4.1/wave_direction_analysis",
+    "LFP_SAMPLE_INTERVAL_MS": 1.0,
+    "ELECTRODE_SPACING_MM": 0.141,
+    "LFP_BAND_SEARCH_HZ": [
+      5.0,
+      50.0
+    ],
+    "LFP_BAND_LIMITS_HZ": [
+      5.0,
+      30.0
+    ],
+    "LFP_BAND_HALF_WIDTH_HZ": 3.0,
+    "LFP_FILTER_ORDER": 4,
+    "N_SURROGATES_PER_FRAME": 2,
+    "SURROGATE_CHUNK_FRAMES": 500,
+    "MIN_WAVE_DURATION_MS": 1.0,
+    "MIN_GRADIENT_MM_INV": 0.001,
+    "WAVE_RANDOM_SEED": 0,
+    "EDGE_EXCLUSION_MS": 0.0,
+    "N_DIRECTION_BINS": 19,
+    "HISTOGRAM_NORMALIZATION": "probability",
+    "EXTERNAL_INPUT": 0.92,
+    "RHO_EE": 0.0
+  },
+  "source_files": {
+    "1": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J1.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J1.mat"
+    ],
+    "2": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J2.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J2.mat"
+    ],
+    "3": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J3.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J3.mat"
+    ],
+    "4": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J4.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J4.mat"
+    ],
+    "5": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J5.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J5.mat"
+    ],
+    "6": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J6.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J6.mat"
+    ],
+    "7": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J7.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J7.mat"
+    ],
+    "8": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J8.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J8.mat"
+    ],
+    "9": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J9.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J9.mat"
+    ],
+    "10": [
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i1_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i2_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i3_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i4_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i5_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i6_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i7_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i8_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i9_J10.mat",
+      "Supplementary/nu_2000_II_0.6_g4.1/LFP_i10_J10.mat"
+    ]
+  },
+  "analysis": {
+    "band_hz": [
+      17.01953125,
+      23.01953125
+    ],
+    "dominant_frequency_hz": 20.01953125,
+    "r_threshold": 0.5,
+    "residual_threshold_rad": 0.2
+  },
+  "detected_events": 449,
+  "histogram_events": 449,
+  "histogram_weighting": "one circular-mean direction per event, pooled simulations"
+}

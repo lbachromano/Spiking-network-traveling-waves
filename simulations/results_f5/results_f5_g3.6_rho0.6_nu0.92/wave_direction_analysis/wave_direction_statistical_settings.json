@@ -1,0 +1,204 @@
+{
+  "settings": {
+    "SIMULATION_IDS": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "CHUNK_DURATION_MS": 500.0,
+    "DATA_DIR": "results_f5_g3.6_rho0.6_nu0.92",
+    "EXPECTED_CHUNKS": 5,
+    "THRESHOLD_METHOD": "statistical",
+    "FIXED_Z_THRESHOLD": 95.0,
+    "FIXED_RESIDUAL_THRESHOLD_RAD": 0.3,
+    "RAYLEIGH_PERCENTILE": 99.99,
+    "RESIDUAL_PERCENTILE": 20.0,
+    "OUTPUT_DIR": "results_f5_g3.6_rho0.6_nu0.92/wave_direction_analysis",
+    "LFP_SAMPLE_INTERVAL_MS": 1.0,
+    "ELECTRODE_SPACING_MM": 0.141,
+    "LFP_BAND_SEARCH_HZ": [
+      5.0,
+      50.0
+    ],
+    "LFP_BAND_LIMITS_HZ": [
+      5.0,
+      30.0
+    ],
+    "LFP_BAND_HALF_WIDTH_HZ": 3.0,
+    "MANUAL_BAND_HZ": null,
+    "LFP_FILTER_ORDER": 4,
+    "N_SURROGATES_PER_FRAME": 2,
+    "SURROGATE_CHUNK_FRAMES": 500,
+    "MIN_WAVE_DURATION_MS": 10.0,
+    "MIN_GRADIENT_MM_INV": 0.001,
+    "WAVE_RANDOM_SEED": 0,
+    "EDGE_EXCLUSION_MS": 0.0,
+    "N_DIRECTION_BINS": 16,
+    "HISTOGRAM_NORMALIZATION": "probability",
+    "EXTERNAL_INPUT": 0.9,
+    "RHO_EE": 0.6
+  },
+  "source_files": {
+    "1": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J1.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J1.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J1.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J1.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J1.mat"
+    ],
+    "2": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J2.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J2.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J2.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J2.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J2.mat"
+    ],
+    "3": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J3.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J3.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J3.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J3.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J3.mat"
+    ],
+    "4": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J4.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J4.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J4.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J4.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J4.mat"
+    ],
+    "5": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J5.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J5.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J5.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J5.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J5.mat"
+    ],
+    "6": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J6.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J6.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J6.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J6.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J6.mat"
+    ],
+    "7": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J7.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J7.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J7.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J7.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J7.mat"
+    ],
+    "8": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J8.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J8.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J8.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J8.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J8.mat"
+    ],
+    "9": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J9.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J9.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J9.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J9.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J9.mat"
+    ],
+    "10": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J10.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J10.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J10.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J10.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J10.mat"
+    ],
+    "11": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J11.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J11.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J11.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J11.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J11.mat"
+    ],
+    "12": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J12.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J12.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J12.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J12.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J12.mat"
+    ],
+    "13": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J13.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J13.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J13.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J13.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J13.mat"
+    ],
+    "14": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J14.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J14.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J14.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J14.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J14.mat"
+    ],
+    "15": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J15.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J15.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J15.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J15.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J15.mat"
+    ],
+    "16": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J16.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J16.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J16.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J16.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J16.mat"
+    ],
+    "17": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J17.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J17.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J17.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J17.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J17.mat"
+    ],
+    "18": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J18.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J18.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J18.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J18.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J18.mat"
+    ],
+    "19": [
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i1_J19.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i2_J19.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i3_J19.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i4_J19.mat",
+      "results_f5_g3.6_rho0.6_nu0.92/LFP_i5_J19.mat"
+    ]
+  },
+  "analysis": {
+    "band_hz": [
+      15.06640625,
+      21.06640625
+    ],
+    "dominant_frequency_hz": 18.06640625,
+    "z_threshold": 4.737097995446493,
+    "residual_threshold_rad": 0.25799893580685895
+  },
+  "detected_events": 174,
+  "histogram_events": 174,
+  "histogram_weighting": "one circular-mean direction per event, pooled simulations"
+}

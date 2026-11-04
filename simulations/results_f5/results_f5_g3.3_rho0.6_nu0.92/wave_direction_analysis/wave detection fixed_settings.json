@@ -1,0 +1,60 @@
+{
+  "settings": {
+    "DATASET": "fig5_g3.3",
+    "DATA_DIR": "results_f5_g3.3_rho0.6",
+    "SIMULATION_IDS": [
+      1,
+      2
+    ],
+    "EXPECTED_CHUNKS": 5,
+    "CHUNK_DURATION_MS": 1000.0,
+    "MANUAL_BAND_HZ": null,
+    "OUTPUT_DIR": "results_f5_g3.3_rho0.6/wave_direction_analysis",
+    "LFP_SAMPLE_INTERVAL_MS": 1.0,
+    "ELECTRODE_SPACING_MM": 0.141,
+    "LFP_BAND_SEARCH_HZ": [
+      5.0,
+      50.0
+    ],
+    "LFP_BAND_LIMITS_HZ": [
+      5.0,
+      30.0
+    ],
+    "LFP_BAND_HALF_WIDTH_HZ": 3.0,
+    "THRESHOLD_METHOD": "fixed",
+    "FIXED_R_THRESHOLD": 0.5,
+    "LFP_FILTER_ORDER": 4,
+    "MIN_WAVE_DURATION_MS": 1.0,
+    "MIN_GRADIENT_MM_INV": 0.001,
+    "EDGE_EXCLUSION_MS": 0.0,
+    "N_DIRECTION_BINS": 19,
+    "HISTOGRAM_NORMALIZATION": "probability"
+  },
+  "source_files": {
+    "1": [
+      "results_f5_g3.3_rho0.6/LFP_i1_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i2_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i3_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i4_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i5_J1.mat"
+    ],
+    "2": [
+      "results_f5_g3.3_rho0.6/LFP_i1_J2.mat",
+      "results_f5_g3.3_rho0.6/LFP_i2_J2.mat",
+      "results_f5_g3.3_rho0.6/LFP_i3_J2.mat",
+      "results_f5_g3.3_rho0.6/LFP_i4_J2.mat",
+      "results_f5_g3.3_rho0.6/LFP_i5_J2.mat"
+    ]
+  },
+  "analysis": {
+    "band_hz": [
+      17.5078125,
+      23.5078125
+    ],
+    "dominant_frequency_hz": 20.5078125,
+    "r_threshold": 0.5
+  },
+  "detected_events": 41,
+  "histogram_events": 41,
+  "histogram_weighting": "one circular-mean direction per event, pooled simulations"
+}

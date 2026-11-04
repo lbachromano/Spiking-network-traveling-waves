@@ -1,0 +1,59 @@
+{
+  "settings": {
+    "DATA_DIR": "results_f5_g3.3_rho0.6",
+    "OUTPUT_DIR": "results_f5_g3.3_rho0.6/wave_direction_analysis",
+    "SIMULATION_IDS": [
+      1
+    ],
+    "EXPECTED_CHUNKS": 5,
+    "THRESHOLD_METHOD": "statistical",
+    "EXTERNAL_INPUT": 0.9,
+    "RHO_EE": 0.6,
+    "LFP_SAMPLE_INTERVAL_MS": 1.0,
+    "ELECTRODE_SPACING_MM": 0.141,
+    "LFP_BAND_SEARCH_HZ": [
+      5.0,
+      50.0
+    ],
+    "LFP_BAND_LIMITS_HZ": [
+      5.0,
+      30.0
+    ],
+    "LFP_BAND_HALF_WIDTH_HZ": 3.0,
+    "MANUAL_BAND_HZ": null,
+    "LFP_FILTER_ORDER": 4,
+    "FIXED_Z_THRESHOLD": 90.0,
+    "FIXED_RESIDUAL_THRESHOLD_RAD": 0.3,
+    "RAYLEIGH_PERCENTILE": 99.99,
+    "RESIDUAL_PERCENTILE": 10.0,
+    "N_SURROGATES_PER_FRAME": 2,
+    "SURROGATE_CHUNK_FRAMES": 500,
+    "MIN_WAVE_DURATION_MS": 10.0,
+    "MIN_GRADIENT_MM_INV": 0.001,
+    "WAVE_RANDOM_SEED": 0,
+    "EDGE_EXCLUSION_MS": 300.0,
+    "N_DIRECTION_BINS": 26,
+    "HISTOGRAM_NORMALIZATION": "probability"
+  },
+  "source_files": {
+    "1": [
+      "results_f5_g3.3_rho0.6/LFP_i1_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i2_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i3_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i4_J1.mat",
+      "results_f5_g3.3_rho0.6/LFP_i5_J1.mat"
+    ]
+  },
+  "analysis": {
+    "band_hz": [
+      17.5078125,
+      23.5078125
+    ],
+    "dominant_frequency_hz": 20.5078125,
+    "z_threshold": 3.7460531755001965,
+    "residual_threshold_rad": 0.8519207970047495
+  },
+  "detected_events": 14,
+  "histogram_events": 14,
+  "histogram_weighting": "one circular-mean direction per event, pooled simulations"
+}
